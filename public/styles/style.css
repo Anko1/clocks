@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+section {
+  padding: 80px 0;
+}
+h4.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+section#header {
+  height: 120px;
+  padding: 0;
+}
+section#header nav {
+  height: 120px;
+  background-color: white;
+}
+section#header nav .nav-wrapper .brand-logo {
+  color: black;
+}
+section.banner {
+  height: calc(100vh -  120px);
+  background-color: red;
+}
+section#slider {
+  position: relative;
+}
+section#slider .multiple-items .slick-track {
+  padding: 10px 0;
+  /* the slides */
+  /* the parent */
+}
+section#slider .multiple-items .slick-track .slick-slide {
+  margin: 0 10px;
+}
+section#slider .multiple-items .slick-track .slick-list {
+  margin: 0 -10px;
+}
+section#slider .multiple-items .card .clock-price span {
+  color: black;
+}
+section#slider .multiple-items .card .clock-price span.sale {
+  text-decoration: line-through;
+}
+section#slider .multiple-items .card .clock-price span.new-price {
+  color: red;
+}
+section#slider .controls .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: black;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+}
+section#slider .controls .arrow i {
+  color: white;
+  margin: auto;
+}
+section#slider .controls #next {
+  right: -100px;
+}
+section#slider .controls #prev {
+  left: -100px;
+}
+section#features {
+  margin-top: 10vh;
+  background-color: whitesmoke;
+}
+section#features .feature {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+section#photos .photo img {
+  width: 100%;
+  object-fit: contain;
+}
