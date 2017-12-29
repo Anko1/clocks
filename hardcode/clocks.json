@@ -1,0 +1,41 @@
+[{
+    "nane": "New WAtch",
+    "price": 1,
+    "description": "Welly Merck Men's wrist watches boast strength and durability, and are amazingly fashionable on your wrist. With its outstanding quality, the Welly Merck fashion luxury watch is simply perfect for all kinds of activities and daily use.",
+    "details": {
+        "size": "m",
+        "case": "hz",
+        "glass": "hz",
+        "movement": "hz",
+        "dialColor": "hz",
+        "strap": "hz",
+        "water": "hz"
+    },
+    "imagess": ["sone url", "some url"],
+    "addText": [{
+        "head": "some text",
+        "text": "some text",
+        "img": "some img link"
+    }],
+    "colors": ["#fff", "#f4f4f4"]
+},{
+    "nane": "New WAtch",
+    "price": 1,
+    "description": "Welly Merck Men's wrist watches boast strength and durability, and are amazingly fashionable on your wrist. With its outstanding quality, the Welly Merck fashion luxury watch is simply perfect for all kinds of activities and daily use.",
+    "details": {
+        "size": "m",
+        "case": "hz",
+        "glass": "hz",
+        "movement": "hz",
+        "dialColor": "hz",
+        "strap": "hz",
+        "water": "hz"
+    },
+    "imagess": ["sone url", "some url"],
+    "addText": [{
+        "head": "some text",
+        "text": "some text",
+        "img": "some img link"
+    }],
+    "colors": ["#fff", "#f4f4f4"]
+}]
