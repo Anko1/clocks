@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+body {
+  font-family: 'Open Sans', sans-serif;
+  transition: .3s;
+}
 * {
   padding: 0;
   margin: 0;
@@ -9,4 +14,28 @@ section {
 h4.header {
   text-align: center;
   margin-bottom: 40px;
+  color: #7b7b7b;
+}
+.controls .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: transparent;
+  border-radius: 50%;
+  border: 1px solid #7b7b7b;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  transition: .5s;
+}
+.controls .arrow i {
+  color: #7b7b7b;
+  margin: auto;
+}
+.controls .next {
+  right: -100px;
+}
+.controls .prev {
+  left: -100px;
 }

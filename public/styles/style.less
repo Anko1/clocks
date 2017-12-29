@@ -10,6 +10,9 @@ section#header {
     background-color: white;
 
     .nav-wrapper {
+      display: flex;
+      align-items: center;
+
       .brand-logo {
         color: black;
       }
@@ -19,7 +22,30 @@ section#header {
 
 section.banner {
   height: calc(~"100vh - " @header-height);
-  background-color: red;
+  background: url("../images/banner2.jpg") center no-repeat;
+  background-size: cover;
+  //height: 100%;
+  position: relative;
+
+  .info-wrap {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translateY(-50%);
+
+    width: 50%;
+    text-align: center;
+    color: white;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    .shop-now {
+      .shop-now-holder;
+    }
+  }
+
 }
 
 section#slider {
@@ -43,9 +69,16 @@ section#slider {
     .card {
       .card-holder(@CARD_WIDTH, @CARD_MARGIN);
 
+      .clock-title {
+
+        i {
+          font-size: 36px;
+        }
+      }
+
       .clock-price {
         span {
-          color: black;
+          color: @color-gray;
         }
 
         span.sale {
@@ -59,33 +92,6 @@ section#slider {
     }
   }
 
-  .controls {
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-
-      background: black;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      display: flex;
-
-      i {
-        color: white;
-        margin: auto;
-      }
-    }
-
-    #next {
-      right: -100px;
-    }
-
-    #prev {
-      left: -100px;
-    }
-  }
 }
 
 section#features {
@@ -97,14 +103,109 @@ section#features {
     flex-direction: column;
     //justify-content: center;
     text-align: center;
+
+    img{
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    span{
+      font-weight: bold;
+    }
   }
 }
 
 section#photos {
   .photo {
+    cursor: pointer;
+
     img {
       width: 100%;
       object-fit: contain;
+    }
+  }
+}
+
+section#press {
+  background-color: @color-block;
+
+  .container {
+    position: relative;
+
+    .p-wrap {
+      .comment {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 250px;
+
+        p {
+          width: 60%;
+          font-size: 20px;
+          text-align: center;
+        }
+
+        img {
+          max-width: 30%;
+          //height: 40px;
+          //object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+#clock-photo {
+  width: 80vw;
+  height: 80vh;
+  overflow-y: hidden;
+
+  .modal-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+
+    img#clock-photo-icon {
+      width: 45%;
+    }
+
+    .clock-info {
+      width: 45%;
+      background-color: rebeccapurple;
+      height: 200px;
+    }
+  }
+}
+
+footer.page-footer {
+  background-color: @color-footer;
+  color: black;
+
+  .subscribe {
+
+    input {
+      float: left;
+
+      width: 70%;
+      background: white;
+      border: 1px solid @color-gray;
+      height: 50px;
+    }
+
+    button {
+      float: left;
+      background-color: @color-gray;
+      height: 52px;
+      transition: .3s;
+      border: 1px solid #8b8b8b;
+      padding: 0 30px;
+      color: white;
+      font-weight: bold;
+      
+      &:hover{
+        background-color: #489e7b;
+      }
     }
   }
 }

@@ -19,4 +19,4 @@ server.get('/clock/:id', (req, res) => {
 										 });
 });
 
-server.listen(PORT, () => {console.log('Sever started!')});
+server.listen(PORT, () => {console.log('Server started!')});
