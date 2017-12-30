@@ -42,4 +42,4 @@ module.exports = {
 
         res.json("ok");
     }
-}
+};

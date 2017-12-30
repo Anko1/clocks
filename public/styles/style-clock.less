@@ -1,0 +1,85 @@
+@import "variables";
+@import "config";
+@import "header";
+@import "footer";
+
+h1 {
+  text-align: center;
+}
+
+.clock-photos-wrapper {
+  position: relative;
+
+  .clock-photos {
+    img.photo {
+      transform: scale(.75);
+      transition: .5s;
+
+      &:focus{
+        outline: none;
+      }
+
+      &.slick-center {
+        transform: scale(1.1);
+
+      }
+    }
+
+  }
+}
+
+.clock-info{
+  .colors{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    //align-items: flex-start;
+
+    .color-wrap{
+      width: 30%;
+      height: 50px;
+      border: 1px solid @color-gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .color{
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+
+        background: transparent;
+        position: relative;
+        border: none;
+
+        &:active{
+          transform: scale(.75);
+        }
+
+
+
+        &::after{
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          //background-color: inherit;
+
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+
+          border: 1px solid @color-gray;
+        }
+
+        &:hover::after{
+          border: 2px solid black;
+
+        }
+      }
+    }
+
+
+  }
+}

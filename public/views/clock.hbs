@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/styles/style-clock.css">
+</head>
+<body>
+
+{{> header}}
+
+{{#if clock}}
+
+    <h1>{{clock.name}}</h1>
+
+    <div class="clock-photos-wrapper container">
+        <div class="clock-photos">
+            {{#each clock.images}}
+                <img class="photo" src="{{this}}">
+            {{/each}}
+        </div>
+
+        <div class="controls">
+        <span id="prev-clock" class="arrow prev">
+            <i class="material-icons right">keyboard_arrow_left</i>
+        </span>
+
+            <span id="next-clock" class="arrow next">
+            <i class="material-icons right">keyboard_arrow_right</i>
+        </span>
+        </div>
+    </div>
+
+    <div class="container clock-info">
+        <form action="">
+            <div class="row">
+                <div class="col l4">
+                    <div class="colors">
+                        {{#each clock.colors}}
+                            <div class="color-wrap">
+                                <button type="button" class="color" data-color="{{this}}"></button>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div class="col l3">
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+{{/if}}
+
+
+{{> footer}}
+
+<script defer
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script defer type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+
+<script defer src="/js/app-clock.js"></script>
+</body>
+</html>

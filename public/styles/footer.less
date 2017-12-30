@@ -1,0 +1,58 @@
+@import "variables";
+
+footer.page-footer {
+  background-color: @color-footer;
+  color: black;
+
+  .ss-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    .subscribe {
+      width: 65%;
+
+      input {
+        float: left;
+
+        width: 70%;
+        background: white;
+        border: 1px solid @color-gray;
+        height: 50px;
+        margin: 0;
+      }
+
+      button {
+        float: left;
+        background-color: @color-gray;
+        height: 52px;
+        transition: .3s;
+        border: 1px solid #8b8b8b;
+        padding: 0 30px;
+        color: white;
+        font-weight: bold;
+
+        &:hover {
+          background-color: #489e7b;
+        }
+      }
+    }
+
+    .socials{
+      width: 30%;
+
+      .fa {
+        padding: 15px;
+        font-size: 30px;
+        text-align: left;
+        text-decoration: none;
+        margin: 5px 2px;
+        border-radius: 50%;
+        background-color: #555;
+        color: white;
+      }
+    }
+  }
+
+}

@@ -11,7 +11,7 @@ const Clock = new Schema({
     colors   : Array 
 }, {
     collection: 'clocks'
-})
+});
 
 
 module.exports = mongoose.model('Clocks', Clock);
