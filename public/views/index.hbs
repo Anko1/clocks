@@ -36,7 +36,7 @@
     <div class="multiple-items">
         {{#each clocks}}
             <div class="clock">
-                <a href="/clock/{{@index}}">
+                <a href="/clock-view/{{@index}}">
                     <img src="{{this.images.[0]}}" class="clock-icon">
                 </a>
 
@@ -126,34 +126,34 @@
 
     <div class="row">
         <div class="col l4">
-            <div class="photo"><img
+            <div class="photo" data-clock-id="0"><img
                     src="https://cdn.cultofmac.com/wp-content/uploads/2016/09/AppleWatch-780x521-780x521.jpg" alt="">
             </div>
         </div>
         <div class="col l4">
-            <div class="photo"><img
+            <div class="photo" data-clock-id="1"><img
                     src="https://cdn.cultofmac.com/wp-content/uploads/2016/09/AppleWatch-780x521-780x521.jpg" alt="">
             </div>
         </div>
         <div class="col l4">
-            <div class="photo"><img
+            <div class="photo" data-clock-id="2"><img
                     src="https://cdn.cultofmac.com/wp-content/uploads/2016/09/AppleWatch-780x521-780x521.jpg" alt="">
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col l4">
-            <div class="photo"><img
+            <div class="photo" data-clock-id="3"><img
                     src="https://cdn.cultofmac.com/wp-content/uploads/2016/09/AppleWatch-780x521-780x521.jpg" alt="">
             </div>
         </div>
         <div class="col l4">
-            <div class="photo"><img
+            <div class="photo" data-clock-id="4"><img
                     src="https://cdn.cultofmac.com/wp-content/uploads/2016/09/AppleWatch-780x521-780x521.jpg" alt="">
             </div>
         </div>
         <div class="col l4">
-            <div class="photo"><img
+            <div class="photo" data-clock-id="5"><img
                     src="https://cdn.cultofmac.com/wp-content/uploads/2016/09/AppleWatch-780x521-780x521.jpg" alt="">
             </div>
         </div>
@@ -218,7 +218,7 @@
     <div class="modal-content">
         <img id="clock-photo-icon" src=""/>
 
-        <div class="clock-info"></div>
+        <div id="clock-photo-info" class="clock-info"></div>
     </div>
 </div>
 

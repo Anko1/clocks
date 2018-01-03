@@ -103,13 +103,39 @@ section#header nav .nav-wrapper #cart span::before {
 }
 #cart-content {
   width: 300px;
+  min-height: 50px;
   background-color: red;
   position: fixed;
   top: 120px;
   right: 0;
   z-index: 1;
-  display: flex;
+  display: none;
   flex-direction: column;
+  justify-content: space-between;
+}
+#cart-content.active {
+  display: flex;
+}
+#cart-content.active .cart-header,
+#cart-content.active .cart-buy,
+#cart-content.active .cart-items {
+  display: block;
+}
+#cart-content.empty .cart-empty {
+  display: block;
+}
+#cart-content.empty .cart-header,
+#cart-content.empty .cart-buy,
+#cart-content.empty .cart-items {
+  display: none;
+}
+#cart-content .cart-header,
+#cart-content .cart-buy,
+#cart-content .cart-items {
+  display: none;
+}
+#cart-content .cart-empty {
+  display: none;
 }
 #cart-content .clock-cart-model {
   display: flex;
@@ -301,4 +327,11 @@ section#press .container .p-wrap .comment img {
   width: 45%;
   background-color: rebeccapurple;
   height: 200px;
+}
+#clock-photo .modal-content .clock-info .clock-cart-model {
+  display: flex;
+}
+#clock-photo .modal-content .clock-info .clock-cart-model img {
+  width: 64px;
+  height: 64px;
 }

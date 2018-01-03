@@ -44,14 +44,14 @@ app
         });
     })
     //TODO remove from here in future :)
-    .get('/clock/:id', (req, res) => {
-        const { id } = req.params;
+    .get('/clock-view/:id', (req, res) => {
+        const {id} = req.params;
 
         res.render(__dirname + '/public/views/clock.hbs', {
             clock: CLOCKS[id]
         });
     })
-    .get('/cart', (req, res) => {
+    .get('/get-cart', (req, res) => {
         const ids = req.query.clocks.split(',').map(n => parseInt(n));
 
         const answer = CLOCKS.filter((clock, i) => {
@@ -60,9 +60,19 @@ app
             return ids.includes(clockId) ? clock : null;
         });
 
-        console.log(answer);
+        // console.log(answer);
 
         res.send(answer);
+    })
+    .get('/buy-cart', (req, res) => {
+        const ids = req.query.clocks.split(',').map(n => parseInt(n));
+
+        res.status(200).send('ALL FINE!');
+    })
+    .get('/clock/:id', (req, res) => {
+        const {id} = req.params;
+
+        res.send(CLOCKS[id]);
     })
     // USE
     .use('/api', api)
