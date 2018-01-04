@@ -244,6 +244,59 @@ section#press {
 
       }
     }
+
+
+    @media @tablet {
+      flex-direction: column;
+
+      img#clock-photo-icon{
+        width: 100%;
+      }
+
+      .modal-content-left{
+        width: 100%;
+
+        h4{
+          text-align: center;
+        }
+
+        .instagram{
+          display: none;
+        }
+
+        .clock-info{
+          height: auto;
+
+          .clock-cart-model{
+            flex-direction: column;
+            margin-bottom: 50px;
+
+            img{
+              width: 100%;
+            }
+
+            .clock-info{
+              flex-direction: column;
+              width: 100%;
+              height: auto;
+
+              span{
+                text-align: center;
+                width: 100%;
+                margin-top: 10px;
+              }
+
+            }
+          }
+
+          button.clock-buy{
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+
+      }
+    }
   }
 
   button#clock-photo-close{

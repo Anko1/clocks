@@ -8,10 +8,26 @@ $(function () {
         slidesToScroll: 1,
         prevArrow: $('#prev-clock'),
         nextArrow: $('#next-clock'),
-        // variableWidth: true
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    centerMode: true,
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    centerMode: true,
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
     $('.p-wrap').slick({
+        dots: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
@@ -21,18 +37,14 @@ $(function () {
             {
                 breakpoint: 768,
                 settings: {
-                    arrows: false,
                     centerMode: true,
-                    centerPadding: '40px',
                     slidesToShow: 1
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
-                    arrows: false,
                     centerMode: true,
-                    centerPadding: '40px',
                     slidesToShow: 1
                 }
             }
@@ -94,7 +106,7 @@ const onBuyBtn = function (e) {
     $(document).trigger('cart', id);
 
     $('#cart-content').removeClass('active');
-}
+};
 
 const getClockFromServer = function (id) {
     return new Promise(function (res, rej) {

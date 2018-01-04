@@ -434,6 +434,47 @@ section#press .container .p-wrap .comment img {
 #clock-photo .modal-content .modal-content-left .clock-info .clock-buy i {
   color: #7b7b7b;
 }
+@media screen and (max-width: 768px) {
+  #clock-photo .modal-content {
+    flex-direction: column;
+  }
+  #clock-photo .modal-content img#clock-photo-icon {
+    width: 100%;
+  }
+  #clock-photo .modal-content .modal-content-left {
+    width: 100%;
+  }
+  #clock-photo .modal-content .modal-content-left h4 {
+    text-align: center;
+  }
+  #clock-photo .modal-content .modal-content-left .instagram {
+    display: none;
+  }
+  #clock-photo .modal-content .modal-content-left .clock-info {
+    height: auto;
+  }
+  #clock-photo .modal-content .modal-content-left .clock-info .clock-cart-model {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  #clock-photo .modal-content .modal-content-left .clock-info .clock-cart-model img {
+    width: 100%;
+  }
+  #clock-photo .modal-content .modal-content-left .clock-info .clock-cart-model .clock-info {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+  #clock-photo .modal-content .modal-content-left .clock-info .clock-cart-model .clock-info span {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  #clock-photo .modal-content .modal-content-left .clock-info button.clock-buy {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 #clock-photo button#clock-photo-close {
   position: absolute;
   top: 0;
