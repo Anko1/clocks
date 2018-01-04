@@ -104,7 +104,7 @@ section#header nav .nav-wrapper #cart span::before {
 #cart-content {
   width: 300px;
   min-height: 50px;
-  background-color: red;
+  background-color: #ebeced;
   position: fixed;
   top: 120px;
   right: 0;
@@ -129,6 +129,13 @@ section#header nav .nav-wrapper #cart span::before {
 #cart-content.empty .cart-items {
   display: none;
 }
+#cart-content .cart-header {
+  text-align: center;
+  border-bottom: 1px solid white;
+  font-size: 30px;
+  text-transform: uppercase;
+  padding: 5px 0;
+}
 #cart-content .cart-header,
 #cart-content .cart-buy,
 #cart-content .cart-items {
@@ -136,17 +143,40 @@ section#header nav .nav-wrapper #cart span::before {
 }
 #cart-content .cart-empty {
   display: none;
+  text-align: center;
+  font-size: 30px;
 }
-#cart-content .clock-cart-model {
+#cart-content .cart-items {
+  padding: 10px 0;
+  max-height: 30vh;
+  overflow-y: auto;
+}
+#cart-content .cart-items .clock-cart-model {
+  margin-top: 5px;
   display: flex;
+  align-items: center;
 }
-#cart-content .clock-cart-model img {
+#cart-content .cart-items .clock-cart-model img {
   width: 64px;
   height: 64px;
+}
+#cart-content .cart-items .clock-cart-model .clock-info {
+  margin-left: 5px;
+}
+#cart-content .cart-items .clock-cart-model .clock-info span {
+  font-size: 20px;
+}
+#cart-content .cart-buy {
+  background-color: #7b7b7b;
 }
 footer.page-footer {
   background-color: #ebeced;
   color: black;
+}
+footer.page-footer h5 {
+  color: #7b7b7b;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #7b7b7b;
 }
 footer.page-footer .ss-wrapper {
   display: flex;
@@ -190,6 +220,31 @@ footer.page-footer .ss-wrapper .socials .fa {
   border-radius: 50%;
   background-color: #555;
   color: white;
+}
+footer.page-footer .links ul li {
+  margin: 10px 0;
+}
+footer.page-footer .links ul li a {
+  color: #7b7b7b;
+  font-size: 16px;
+}
+footer.page-footer .pp-wrapper .payment {
+  height: 32px;
+  margin-right: 10px;
+  float: left;
+}
+footer.page-footer .address {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+}
+footer.page-footer .address span {
+  width: 100%;
+}
+footer.page-footer .footer-copyright {
+  background-color: white;
+  text-align: center;
+  color: #7b7b7b;
 }
 section.banner {
   height: calc(100vh -  120px);
@@ -310,9 +365,8 @@ section#press .container .p-wrap .comment img {
   max-width: 30%;
 }
 #clock-photo {
-  width: 80vw;
-  height: 80vh;
-  overflow-y: hidden;
+  width: 75vw;
+  height: 75vh;
 }
 #clock-photo .modal-content {
   display: flex;
@@ -322,16 +376,68 @@ section#press .container .p-wrap .comment img {
 }
 #clock-photo .modal-content img#clock-photo-icon {
   width: 45%;
+  height: 90%;
+  object-fit: cover;
 }
-#clock-photo .modal-content .clock-info {
+#clock-photo .modal-content .modal-content-left {
+  height: 90%;
   width: 45%;
-  background-color: rebeccapurple;
+  transition: .3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#clock-photo .modal-content .modal-content-left .instagram {
+  width: 100%;
+}
+#clock-photo .modal-content .modal-content-left .instagram .instagram-photo {
+  width: 64px;
+}
+#clock-photo .modal-content .modal-content-left .instagram i {
+  margin: 0 10px;
+}
+#clock-photo .modal-content .modal-content-left .instagram a {
+  color: #7b7b7b;
+  text-decoration: underline;
+  font-style: italic;
+}
+#clock-photo .modal-content .modal-content-left .clock-info {
+  width: 100%;
+  background-color: #ebeced;
+  height: 200px;
+  position: relative;
+}
+#clock-photo .modal-content .modal-content-left .clock-info .clock-cart-model {
+  display: flex;
+  align-items: center;
+}
+#clock-photo .modal-content .modal-content-left .clock-info .clock-cart-model img {
   height: 200px;
 }
-#clock-photo .modal-content .clock-info .clock-cart-model {
+#clock-photo .modal-content .modal-content-left .clock-info .clock-cart-model .clock-info {
   display: flex;
+  align-items: center;
+  margin-left: 10px;
 }
-#clock-photo .modal-content .clock-info .clock-cart-model img {
-  width: 64px;
-  height: 64px;
+#clock-photo .modal-content .modal-content-left .clock-info .clock-cart-model .clock-info span {
+  font-size: 24px;
+}
+#clock-photo .modal-content .modal-content-left .clock-info .clock-buy {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #ebeced;
+  border: 1px solid #7b7b7b;
+  transform: scale(1.5) translate(25%, 25%);
+}
+#clock-photo .modal-content .modal-content-left .clock-info .clock-buy i {
+  color: #7b7b7b;
+}
+#clock-photo button#clock-photo-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
 }

@@ -157,9 +157,9 @@ section#press {
 }
 
 #clock-photo {
-  width: 80vw;
-  height: 80vh;
-  overflow-y: hidden;
+  width: 75vw;
+  height: 75vh;
+  //overflow-y: hidden;
 
   .modal-content {
     display: flex;
@@ -169,21 +169,88 @@ section#press {
 
     img#clock-photo-icon {
       width: 45%;
+      height: 90%;
+      object-fit: cover;
     }
 
-    .clock-info {
+    .modal-content-left{
+      height: 90%;
       width: 45%;
-      background-color: rebeccapurple;
-      height: 200px;
+      transition: .3s;
 
-      .clock-cart-model{
-        display: flex;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
 
-        img{
+      .instagram{
+        width: 100%;
+
+        .instagram-photo{
           width: 64px;
-          height: 64px;
+        }
+
+        i{
+          margin: 0 10px;
+        }
+
+        a{
+          color: @color-gray;
+          text-decoration: underline;
+          font-style: italic;
         }
       }
+
+      .clock-info {
+        width: 100%;
+        background-color: @color-footer;
+        height: @height-clock-photo;
+        position: relative;
+
+        .clock-cart-model{
+          display: flex;
+          align-items: center;
+
+          img{
+            height: @height-clock-photo;
+          }
+
+          .clock-info{
+            display: flex;
+            align-items: center;
+
+            margin-left: 10px;
+
+            span{
+              font-size: 24px;
+            }
+          }
+        }
+
+        .clock-buy{
+          position: absolute;
+          right: 0;
+          bottom: 0;
+
+          background-color: @color-footer;
+          border: 1px solid @color-gray;
+
+          transform: scale(1.5) translate(25%, 25%);
+
+          i{
+            color: @color-gray;
+          }
+        }
+
+      }
     }
+  }
+
+  button#clock-photo-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
   }
 }
