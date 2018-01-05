@@ -101,6 +101,11 @@ section#header nav .nav-wrapper #cart span::before {
   left: 50%;
   z-index: -1;
 }
+@media screen and (max-width: 768px) {
+  section#header nav .nav-wrapper #cart {
+    right: 0;
+  }
+}
 #cart-content {
   width: 300px;
   min-height: 50px;
@@ -168,6 +173,22 @@ section#header nav .nav-wrapper #cart span::before {
 }
 #cart-content .cart-buy {
   background-color: #7b7b7b;
+}
+section#features {
+  margin-top: 10vh;
+  background-color: whitesmoke;
+}
+section#features .feature {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+section#features .feature img {
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+section#features .feature span {
+  font-weight: bold;
 }
 footer.page-footer {
   background-color: #ebeced;
@@ -246,6 +267,22 @@ footer.page-footer .footer-copyright {
   text-align: center;
   color: #7b7b7b;
 }
+@media screen and (max-width: 768px) {
+  footer.page-footer .ss-wrapper {
+    flex-direction: column;
+  }
+  footer.page-footer .ss-wrapper .subscribe,
+  footer.page-footer .ss-wrapper .socials {
+    width: 100%;
+  }
+  footer.page-footer .ss-wrapper .subscribe {
+    margin-bottom: 20px;
+  }
+  footer.page-footer .ss-wrapper .subscribe input,
+  footer.page-footer .ss-wrapper .subscribe button {
+    width: 100%;
+  }
+}
 section.banner {
   height: calc(100vh -  120px);
   background: url("../images/banner2.jpg") center no-repeat;
@@ -290,6 +327,14 @@ section#clocks .multiple-items .slick-track .slick-slide {
 section#clocks .multiple-items .slick-track .slick-list {
   margin: 0 -10px;
 }
+@media screen and (max-width: 768px) {
+  section#clocks .multiple-items .clock {
+    opacity: 0;
+  }
+  section#clocks .multiple-items .clock.slick-center {
+    opacity: 1;
+  }
+}
 section#clocks .multiple-items .clock .clock-icon {
   width: 100%;
   height: 70%;
@@ -320,22 +365,6 @@ section#clocks .multiple-items .clock .clock-info .clock-buy {
 }
 section#clocks .multiple-items .clock .clock-info .clock-buy i {
   color: #7b7b7b;
-}
-section#features {
-  margin-top: 10vh;
-  background-color: whitesmoke;
-}
-section#features .feature {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-section#features .feature img {
-  object-fit: contain;
-  margin-bottom: 20px;
-}
-section#features .feature span {
-  font-weight: bold;
 }
 section#photos .photo {
   cursor: pointer;

@@ -45,7 +45,7 @@
     <div class="container clock-info">
         <form action="">
             <div class="row">
-                <div class="col l4">
+                <div class="col l4 s12">
                     <div class="colors">
                         {{#each clock.colors}}
                             <div class="color-wrap">
@@ -55,25 +55,66 @@
                     </div>
                 </div>
 
-                <div class="col l3">
-
+                <div class="col l3 offset-l5 s12">
+                    <button class="btn buy-now">Buy now!</button>
                 </div>
             </div>
         </form>
     </div>
 
+    <div class="container clock-details-wrapper">
+        <h5>THE DETAILS</h5>
+        <div class="clock-details">
+            {{#each clock.details}}
+                <div class="detail">
+                    <span>{{@key}}</span>
+                    <span>{{this}}</span>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="container add-text-wrapper">
+    {{#each clock.addText}}
+
+        <div class="row add">
+
+            {{#if_even @index}}
+                <div class="col l6 push-l6 s12 valign-wrapper">
+            {{else}}
+                <div class="col l6 s12 valign-wrapper">
+            {{/if_even}}
+                    <div class="add-text">
+                        <h5>{{this.head}}</h5>
+                        <p>{{this.text}}</p>
+                    </div>
+                </div>
+
+            {{#if_even @index}}
+                <div class="col l6 pull-l6 s12">
+            {{else}}
+                <div class="col l6 s12 img-tr">
+            {{/if_even}}
+                    <img src="{{this.img}}" alt="">
+                </div>
+        </div>
+    {{/each}}
+    </div>
+
 {{/if}}
 
 
+{{> features}}
+
 {{> footer}}
 
-<script defer
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<script defer type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+    <script defer
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script defer type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
 
-<script defer src="/js/app-clock.js"></script>
+    <script defer src="/js/app-clock.js"></script>
 </body>
 </html>

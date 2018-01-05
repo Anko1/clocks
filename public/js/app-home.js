@@ -6,18 +6,23 @@ $(function () {
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
+        centerMode: true,
+        dots: true,
         prevArrow: $('#prev-clock'),
         nextArrow: $('#next-clock'),
         responsive: [
             {
                 breakpoint: 768,
+                arrows: false,
                 settings: {
                     centerMode: true,
                     slidesToShow: 1
                 }
             },
             {
-                breakpoint: 480,
+                breakpoint: 320,
+                arrows: false,
+                variableWidth: true,
                 settings: {
                     centerMode: true,
                     slidesToShow: 1
@@ -31,11 +36,13 @@ $(function () {
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
+        centerMode: true,
         prevArrow: $('#prev-press'),
         nextArrow: $('#next-press'),
         responsive: [
             {
                 breakpoint: 768,
+                arrows: false,
                 settings: {
                     centerMode: true,
                     slidesToShow: 1
@@ -43,6 +50,7 @@ $(function () {
             },
             {
                 breakpoint: 480,
+                arrows: false,
                 settings: {
                     centerMode: true,
                     slidesToShow: 1

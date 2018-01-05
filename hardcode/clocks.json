@@ -13,18 +13,28 @@
       "water": "hz"
     },
     "images": [
-      "https://www.wellymerck.com/Public/Upload/productscolors/20170711/thumb/59644c2131e30.jpg",
-      "https://www.wellymerck.com/Public/Upload/productscolors/20170711/thumb/59644cac826e4.jpg",
-      "https://www.wellymerck.com/Public/Upload/productscolors/20170711/thumb/59644c2131e30.jpg",
-      "https://www.wellymerck.com/Public/Upload/productscolors/20170711/thumb/59644cac826e4.jpg",
-      "https://www.wellymerck.com/Public/Upload/productscolors/20170711/thumb/59644c2131e30.jpg",
+      "https://www.wellymerck.com/Public/Upload/productscolors/20170711/thumb/596434375058e.jpg",
+      "https://www.wellymerck.com/Public/Upload/productscolors/20170711/thumb/596434368d614.jpg",
+      "https://www.wellymerck.com/Public/Upload/Temp/productscolors/20170711/thumb/5964343839763.JPG",
+      "https://www.wellymerck.com/Public/Upload/Temp/productscolors/20170711/thumb/5964343931d5e.JPG",
+      "https://www.wellymerck.com/Public/Upload/productscolors/20170711/thumb/5964343a0f818.jpg",
       "https://www.wellymerck.com/Public/Upload/productscolors/20170711/thumb/59644cac826e4.jpg"
     ],
     "addText": [
       {
-        "head": "some text",
-        "text": "some text",
-        "img": "some img link"
+        "head": "Timeless Luxury Watch",
+        "text": "Classic Washington B by Welly Merck is a timeless luxury watch designed with an impressive sapphire crystal glass. With the beautiful interchangeable straps, you are sure to have an elegant unique watch every day.",
+        "img": "https://www.wellymerck.com/Public/Upload/products/20170714/59683ba6c2132.jpg"
+      },
+      {
+        "head": "Timeless Luxury Watch",
+        "text": "Classic Washington B by Welly Merck is a timeless luxury watch designed with an impressive sapphire crystal glass. With the beautiful interchangeable straps, you are sure to have an elegant unique watch every day.",
+        "img": "https://www.wellymerck.com/Public/Upload/products/20170714/59683ba6c2132.jpg"
+      },
+      {
+        "head": "Timeless Luxury Watch",
+        "text": "Classic Washington B by Welly Merck is a timeless luxury watch designed with an impressive sapphire crystal glass. With the beautiful interchangeable straps, you are sure to have an elegant unique watch every day.",
+        "img": "https://www.wellymerck.com/Public/Upload/products/20170714/59683ba6c2132.jpg"
       }
     ],
     "colors": [

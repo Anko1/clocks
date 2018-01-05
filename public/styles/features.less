@@ -1,0 +1,22 @@
+@import "variables";
+
+section#features {
+  margin-top: 10vh;
+  background-color: @color-block;
+
+  .feature {
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    text-align: center;
+
+    img {
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    span {
+      font-weight: bold;
+    }
+  }
+}

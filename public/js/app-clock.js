@@ -5,7 +5,25 @@ $(function () {
         prevArrow: $('#prev-clock'),
         nextArrow: $('#next-clock'),
         dots: true,
-        centerMode: true
+        centerMode: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                arrows: false,
+                settings: {
+                    centerMode: true,
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                arrows: false,
+                settings: {
+                    centerMode: true,
+                    slidesToShow: 1
+                }
+            }
+        ]
     });
 
     // console.log($('.color').length);
@@ -14,6 +32,10 @@ $(function () {
     $('form').click(function (e) {
         e.preventDefault();
     });
+
+    $('.buy-now').click(function () {
+        alert('Buy now!')
+    })
 });
 
 const initColors = () => {

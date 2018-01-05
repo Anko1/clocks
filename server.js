@@ -10,6 +10,14 @@ const {server: port} = require('./configs/dev.js');
 
 const CLOCKS = require('./hardcode/clocks.json');
 
+hbs.registerHelper('if_even', function(conditional, options) {
+    if((conditional % 2) === 0) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
+
 const app = express();
 
 // mongoS.connect("mongodb://localhost:27017/clocls");
