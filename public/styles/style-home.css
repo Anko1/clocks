@@ -16,6 +16,11 @@ h4.header {
   margin-bottom: 40px;
   color: #7b7b7b;
 }
+@media screen and (max-width: 768px) {
+  .controls {
+    display: none;
+  }
+}
 .controls .arrow {
   position: absolute;
   top: 50%;
@@ -38,6 +43,11 @@ h4.header {
 }
 .controls .prev {
   left: -100px;
+}
+@media screen and (max-width: 768px) {
+  .slick-dots {
+    bottom: auto;
+  }
 }
 section#header {
   height: 120px;
@@ -315,6 +325,8 @@ section.banner .info-wrap .shop-now:hover {
 }
 section#clocks {
   position: relative;
+  width: 70vw;
+  margin: 0 15vw;
 }
 section#clocks .multiple-items .slick-track {
   padding: 10px 0;
@@ -327,12 +339,12 @@ section#clocks .multiple-items .slick-track .slick-slide {
 section#clocks .multiple-items .slick-track .slick-list {
   margin: 0 -10px;
 }
+section#clocks .multiple-items .clock {
+  width: calc(33.33333333%);
+}
 @media screen and (max-width: 768px) {
   section#clocks .multiple-items .clock {
-    opacity: 0;
-  }
-  section#clocks .multiple-items .clock.slick-center {
-    opacity: 1;
+    width: 100%;
   }
 }
 section#clocks .multiple-items .clock .clock-icon {

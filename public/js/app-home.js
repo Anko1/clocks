@@ -6,25 +6,28 @@ $(function () {
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        centerMode: true,
         dots: true,
         prevArrow: $('#prev-clock'),
         nextArrow: $('#next-clock'),
         responsive: [
             {
                 breakpoint: 768,
-                arrows: false,
                 settings: {
-                    centerMode: true,
+                    arrows: false,
                     slidesToShow: 1
                 }
             },
             {
-                breakpoint: 320,
-                arrows: false,
-                variableWidth: true,
+                breakpoint: 480,
                 settings: {
-                    centerMode: true,
+                    arrows: false,
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 360,
+                settings: {
+                    arrows: false,
                     slidesToShow: 1
                 }
             }

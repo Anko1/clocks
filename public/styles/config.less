@@ -38,6 +38,10 @@ h4.header{
 }
 
 .controls {
+  @media @tablet{
+    display: none;
+  }
+
   .arrow {
     position: absolute;
     top: 50%;
@@ -65,5 +69,11 @@ h4.header{
 
   .prev {
     left: -100px;
+  }
+}
+
+.slick-dots{
+  @media @tablet{
+    bottom: auto;
   }
 }

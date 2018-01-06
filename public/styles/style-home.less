@@ -34,6 +34,8 @@ section.banner {
 
 section#clocks {
   position: relative;
+  width: 70vw;
+  margin: 0 15vw;
 
   .multiple-items {
 
@@ -51,13 +53,10 @@ section#clocks {
     }
 
     .clock {
+      width: calc(100% / 3);
 
       @media @tablet {
-        opacity: 0;
-
-        &.slick-center{
-          opacity: 1;
-        }
+        width: 100%;
       }
 
       .clock-icon {

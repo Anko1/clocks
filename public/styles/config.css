@@ -16,6 +16,11 @@ h4.header {
   margin-bottom: 40px;
   color: #7b7b7b;
 }
+@media screen and (max-width: 768px) {
+  .controls {
+    display: none;
+  }
+}
 .controls .arrow {
   position: absolute;
   top: 50%;
@@ -38,4 +43,9 @@ h4.header {
 }
 .controls .prev {
   left: -100px;
+}
+@media screen and (max-width: 768px) {
+  .slick-dots {
+    bottom: auto;
+  }
 }
