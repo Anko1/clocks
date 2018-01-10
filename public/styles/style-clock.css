@@ -177,12 +177,22 @@ section#header nav .nav-wrapper #cart span::before {
 }
 #cart-content .cart-items .clock-cart-model .clock-info {
   margin-left: 5px;
+  padding: 0;
 }
 #cart-content .cart-items .clock-cart-model .clock-info span {
   font-size: 20px;
 }
 #cart-content .cart-buy {
   background-color: #7b7b7b;
+}
+.color-wrapper {
+  display: flex;
+}
+.color-wrapper span.color-dom {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-left: 10px;
 }
 section#features {
   margin-top: 10vh;
@@ -372,7 +382,7 @@ h1 {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  height: 200px;
+  height: 180px;
 }
 .clock-details-wrapper .clock-details::after {
   content: '';
@@ -390,10 +400,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #7b7b7b;
-  border-right: none;
-  border-left: none;
-  margin: 5px 0;
+  border-bottom: 1px solid #7b7b7b;
 }
 .clock-details-wrapper .clock-details .detail span {
   padding: 0 10px;
@@ -423,4 +430,30 @@ h1 {
 .add-text-wrapper .add .img-tr {
   display: flex;
   justify-content: flex-end;
+}
+#buy-form {
+  width: 45vw;
+  height: 75vh;
+}
+@media screen and (max-width: 768px) {
+  #buy-form {
+    width: 80%;
+  }
+  #buy-form .modal-content iframe {
+    overflow-y: auto;
+  }
+}
+#buy-form .modal-content {
+  height: 100%;
+}
+#buy-form .modal-content iframe {
+  width: 100%;
+  height: 100%;
+}
+#buy-form button#buy-form-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
 }

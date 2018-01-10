@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <style>
+        @media screen and (max-width: 768px){
+            form .row {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h4 class="header center">Confirm Purchase</h4>
+
+<form class="col s12">
+    <div class="row">
+        <div class="input-field col s6">
+            <input name="fn" id="first_name" type="text" class="validate" required>
+            <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+            <input name="ln" id="last_name" type="text" class="validate" required>
+            <label for="last_name">Last Name</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input name="phone" id="phone" type="tel" class="validate" required>
+            <label for="phone">Phone</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input name="email" id="email" type="email" class="validate" required>
+            <label for="email">Email</label>
+        </div>
+    </div>
+    <div class="row hide-on-small-only">
+        <div class="input-field col s12">
+            <textarea name="description" id="description" class="materialize-textarea"></textarea>
+            <label for="description">Description</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12 center">
+            <button class="btn" type="submit">Submit</button>
+        </div>
+    </div>
+</form>
+
+<script defer
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script defer src="/js/cookie.js"></script>
+<script defer src="/js/app-buy.js"></script>
+</body>
+</html>

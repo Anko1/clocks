@@ -10,8 +10,8 @@ const {server: port} = require('./configs/dev.js');
 
 const CLOCKS = require('./hardcode/clocks.json');
 
-hbs.registerHelper('if_even', function(conditional, options) {
-    if((conditional % 2) === 0) {
+hbs.registerHelper('if_even', function (conditional, options) {
+    if ((conditional % 2) === 0) {
         return options.fn(this);
     } else {
         return options.inverse(this);
@@ -42,6 +42,7 @@ filenames.forEach(function (filename) {
 app
     .use(express.static('public'))
     .use(cors())
+    .use(bodyPr.urlencoded({extended: false}))
     .use(bodyPr.json())
     // SET
     .set('view engine', 'hbs')
@@ -59,13 +60,19 @@ app
             clock: CLOCKS[id]
         });
     })
-    .get('/get-cart', (req, res) => {
-        const ids = req.query.clocks.split(',').map(n => parseInt(n));
+    .post('/get-cart', (req, res) => {
+        const ids = JSON.parse(req.body.clocks)
 
-        const answer = CLOCKS.filter((clock, i) => {
-            const clockId = i;
+        // const answer = CLOCKS.filter((clock, i) => {
+        //     const clockId = clock.id;
+        //
+        //     return CLOCKS[clockId]
+        // });
 
-            return ids.includes(clockId) ? clock : null;
+        const answer = ids.map(clock => {
+            clock.clockInfo = CLOCKS[clock.id]
+
+            return clock
         });
 
         // console.log(answer);
@@ -81,6 +88,15 @@ app
         const {id} = req.params;
 
         res.send(CLOCKS[id]);
+    })
+    .get('/buy-form', (req, res) => {
+        res.render(__dirname + '/public/views/buy.hbs')
+    })
+    .post('/submit-cart', (req, res) => {
+        const cart = req.body.cart;
+        console.log(cart);
+
+        res.status(200).end()
     })
     // USE
     .use('/api', api)

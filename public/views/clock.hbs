@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="col l3 offset-l5 s12">
-                    <button class="btn buy-now">Buy now!</button>
+                    <button class="btn buy-now" data-clock-id="{{clock.id}}">Buy now!</button>
                 </div>
             </div>
         </form>
@@ -79,24 +79,24 @@
 
         <div class="row add">
 
-            {{#if_even @index}}
-                <div class="col l6 push-l6 s12 valign-wrapper">
-            {{else}}
-                <div class="col l6 s12 valign-wrapper">
-            {{/if_even}}
-                    <div class="add-text">
-                        <h5>{{this.head}}</h5>
-                        <p>{{this.text}}</p>
-                    </div>
-                </div>
+        {{#if_even @index}}
+            <div class="col l6 push-l6 s12 valign-wrapper">
+        {{else}}
+            <div class="col l6 s12 valign-wrapper">
+        {{/if_even}}
+            <div class="add-text">
+                <h5>{{this.head}}</h5>
+                <p>{{this.text}}</p>
+            </div>
+        </div>
 
-            {{#if_even @index}}
-                <div class="col l6 pull-l6 s12">
-            {{else}}
-                <div class="col l6 s12 img-tr">
-            {{/if_even}}
-                    <img src="{{this.img}}" alt="">
-                </div>
+        {{#if_even @index}}
+            <div class="col l6 pull-l6 s12">
+        {{else}}
+            <div class="col l6 s12 img-tr">
+        {{/if_even}}
+            <img src="{{this.img}}" alt="">
+        </div>
         </div>
     {{/each}}
     </div>
@@ -108,13 +108,25 @@
 
 {{> footer}}
 
+    <div id="buy-form" class="modal">
+        <div class="modal-content">
+            <iframe src="/buy-form" frameborder="0" scrolling="no"></iframe>
+        </div>
+
+        <button id="buy-form-close" class="">
+            <i class="material-icons small">close</i>
+        </button>
+    </div>
+
+
     <script defer
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script defer type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
-
+    <script defer src="/js/cookie.js"></script>
     <script defer src="/js/app-clock.js"></script>
+
 </body>
 </html>

@@ -1,7 +1,15 @@
-const CART = [];
-const cartText = $('#cart-count');
+let CART = []
+const cartText = $('#cart-count')
 
 $(function () {
+    try {
+        CART = JSON.parse(getCookie('CART'))
+    } catch (e) {
+        console.log(e.message)
+    }
+
+    if (CART.length > 0) updateCartCount()
+
     $('.multiple-items').slick({
         infinite: true,
         slidesToShow: 3,
@@ -32,7 +40,7 @@ $(function () {
                 }
             }
         ]
-    });
+    })
 
     $('.p-wrap').slick({
         dots: true,
@@ -60,109 +68,133 @@ $(function () {
                 }
             }
         ]
-    });
+    })
 
-    $('#clock-photo').modal();
+    $('.modal').modal()
 
     $('#clock-photo-close').click(function (e) {
-        $('#clock-photo').modal('close');
-    });
+        $('#clock-photo').modal('close')
+    })
 
-    $('.photo').click(onPhoto);
+    $('.photo').click(onPhoto)
 
-    $('.clock-buy').click(onBuyBtn);
+    $('.clock-buy').click(onBuyBtn)
 
     //Triggers
-    $(document).on("cart", function (e, clockId) {
+    $(document).on('cart', function (e, clockId) {
         // console.log(clockId);
 
-        updateCartCount();
-    });
+        updateCartCount()
+    })
 
-    $('#cart').click(openCart);
+    $('#cart').click(openCart)
 
-    $('#cart-buy').click(buyCart);
-});
+    $('#cart-buy').click(buyCart)
+
+    $('#buy-form-close').click(function () {
+        $('#buy-form').modal('close')
+    })
+})
 
 const updateCartCount = function () {
     if (CART.length > 0) {
-        cartText.removeClass('empty');
-        cartText.text(CART.length);
+        cartText.removeClass('empty')
+        cartText.text(CART.length)
     } else {
-        cartText.addClass('empty');
+        cartText.addClass('empty')
     }
-};
+}
 
 const onPhoto = function () {
-    const src = $($(this)[0]).find('img').attr('src');
+    const src = $($(this)[0]).find('img').attr('src')
     // console.log(src);
-    $('#clock-photo-icon').attr('src', src);
-
+    $('#clock-photo-icon').attr('src', src)
 
     getClockFromServer($($(this)[0]).attr('data-clock-id')).then(function (clock) {
         // console.log('HERE =>', clock);
 
-        $('#clock-photo').modal('open');
+        $('#clock-photo').modal('open')
 
-        $('#clock-photo-info').empty();
-        $('#clock-photo-info').append(renderClock(clock));
-        $('#clock-photo-info').append(renderBuyBtn(clock.id ? clock.id : 0));
+        $('#clock-photo-info').empty()
+        $('#clock-photo-info').append(renderClock(clock))
+        $('#clock-photo-info').append(renderBuyBtn(clock.id ? clock.id : 0))
     })
-};
+}
 
 const onBuyBtn = function (e) {
-    const id = $(this).attr('data-clock-id');
-    CART.push(id);
+    const id = $(this).attr('data-clock-id')
+    // CART.push(id);
+    // setCookie('CART', JSON.stringify(CART))
 
-    $(document).trigger('cart', id);
+    $(document).trigger('cart', id)
 
-    $('#cart-content').removeClass('active');
-};
+    $('#cart-content').removeClass('active')
+}
 
 const getClockFromServer = function (id) {
     return new Promise(function (res, rej) {
-        $.get("http://localhost:8888/clock/" + id, {clocks: CART.join(',')}, function (answer) {
+        $.get('http://localhost:8888/clock/' + id, {clocks: CART.join(',')}, function (answer) {
             // console.log(answer);
             res(answer)
-        });
-    });
-};
+        })
+    })
+}
 
 const openCart = function () {
-    const test = $('#cart-content').toggleClass('active');
+    const test = $('#cart-content').toggleClass('active')
 
     if ($(test[0]).css('display') !== 'none') {
 
         if (CART.length > 0) {
-            $('#cart-content').removeClass('empty');
+            $('#cart-content').removeClass('empty')
 
-            $.get("http://localhost:8888/get-cart", {clocks: CART.join(',')}, function (answer) {
-                console.log(answer);
+            $.post('http://localhost:8888/get-cart', {clocks: JSON.stringify(CART)}, function (answer) {
+                console.log(answer)
 
-                $('#cart-content').children('.cart-items').empty();
+                $('#cart-content').children('.cart-items').empty()
 
                 answer.forEach(clock => {
-                    const clockDom = renderClock(clock);
+                    const clockDom = renderClockForCart(clock)
 
-                    $('#cart-content').children('.cart-items').append(clockDom);
+                    $('#cart-content').children('.cart-items').append(clockDom)
                 })
-            });
+            })
         }
-        else $('#cart-content').addClass('empty');
+        else $('#cart-content').addClass('empty')
 
     }
-};
+}
 
 const buyCart = function () {
-    $.get("http://localhost:8888/buy-cart", {clocks: CART.join(',')}, function (answer) {
-        console.log(answer);
+    // $.get('http://localhost:8888/buy-cart', {clocks: CART.join(',')}, function (answer) {
+    //   console.log(answer)
+    //
+    //   CART.length = 0
+    //   $('#cart-content').removeClass('active')
+    //
+    //   updateCartCount()
+    // })
 
-        CART.length = 0;
-        $('#cart-content').removeClass('active');
+    $('#buy-form').modal('open');
+}
 
-        updateCartCount();
-    });
-};
+const renderClockForCart = function (clock, bb) {
+    const clockModel = clock.clockInfo
+    const colorDom = $('<div class="color-wrapper">Color: <span class="color-dom"></span></div>')
+    $(colorDom.find('span')[0]).css({background: clock.color})
+
+    const dom = $(`<div class="clock-cart-model">
+        <img src="${clockModel.images[0]}" alt="" />
+        <div class="clock-info">
+        <span>${clockModel.name} | ${clockModel.price}$</span>
+        
+        </div>
+        </div>`)
+
+    $(dom.find('.clock-info')[0]).append(colorDom)
+
+    return dom
+}
 
 const renderClock = function (clock, bb) {
     const dom = $(`<div class="clock-cart-model">
@@ -175,9 +207,10 @@ const renderClock = function (clock, bb) {
     return dom;
 };
 
-const renderBuyBtn = function (index) {
-    const dom = $(`<button class="clock-buy btn-floating waves-effect waves-gray right" data-clock-id="${index}"><i class="material-icons small">add_shopping_cart</i></button>`);
-    dom.click(onBuyBtn);
 
-    return dom;
-};
+const renderBuyBtn = function (index) {
+    const dom = $(`<button class="clock-buy btn-floating waves-effect waves-gray right" data-clock-id="${index}"><i class="material-icons small">add_shopping_cart</i></button>`)
+    dom.click(onBuyBtn)
+
+    return dom
+}

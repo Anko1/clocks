@@ -177,12 +177,22 @@ section#header nav .nav-wrapper #cart span::before {
 }
 #cart-content .cart-items .clock-cart-model .clock-info {
   margin-left: 5px;
+  padding: 0;
 }
 #cart-content .cart-items .clock-cart-model .clock-info span {
   font-size: 20px;
 }
 #cart-content .cart-buy {
   background-color: #7b7b7b;
+}
+.color-wrapper {
+  display: flex;
+}
+.color-wrapper span.color-dom {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-left: 10px;
 }
 section#features {
   margin-top: 10vh;
@@ -312,6 +322,8 @@ section.banner .info-wrap h1 {
   font-size: 30px;
 }
 section.banner .info-wrap .shop-now {
+  color: white;
+  cursor: pointer;
   background: none;
   padding: 5px 20px;
   text-transform: uppercase;
@@ -353,7 +365,7 @@ section#clocks .multiple-items .clock .clock-icon {
 }
 section#clocks .multiple-items .clock .clock-info {
   height: 30%;
-  padding: 0 20px;
+  padding: 0 70px;
 }
 section#clocks .multiple-items .clock .clock-info .clock-title {
   font-size: 30px;
@@ -517,6 +529,32 @@ section#press .container .p-wrap .comment img {
   }
 }
 #clock-photo button#clock-photo-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+}
+#buy-form {
+  width: 45vw;
+  height: 75vh;
+}
+@media screen and (max-width: 768px) {
+  #buy-form {
+    width: 80%;
+  }
+  #buy-form .modal-content iframe {
+    overflow-y: auto;
+  }
+}
+#buy-form .modal-content {
+  height: 100%;
+}
+#buy-form .modal-content iframe {
+  width: 100%;
+  height: 100%;
+}
+#buy-form button#buy-form-close {
   position: absolute;
   top: 0;
   right: 0;
