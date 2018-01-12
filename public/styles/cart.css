@@ -1,0 +1,8 @@
+.clock-cart-model .color-wrapper {
+  display: flex;
+}
+.clock-cart-model .color-wrapper span.color-dom {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
