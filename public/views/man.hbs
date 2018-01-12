@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="/styles/man-woman.css">
+
+</head>
+<body>
+
+{{> header}}
+
+<div id="clock-wrapper">
+    {{#each clocks}}
+        <div class="clock">
+            <a href="/clock-view/{{@index}}">
+                <img src="{{this.images.[0]}}" class="clock-icon">
+            </a>
+
+            <div class="clock-info">
+                <p class="clock-title center">
+                    {{this.name}} | {{this.price}} $
+                </p>
+                <a class="clock-buy btn waves-effect waves-gray right" href="/clock-view/{{@index}}"
+                   data-clock-id="{{@index}}">
+                    <!--<i class="material-icons small">add_shopping_cart</i>-->
+                    About
+                </a>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+{{> footer}}
+
+</body>
+</html>

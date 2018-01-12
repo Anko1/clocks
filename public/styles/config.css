@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 body {
   font-family: 'Open Sans', sans-serif;
-  transition: .3s;
 }
 * {
   padding: 0;

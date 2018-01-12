@@ -52,6 +52,16 @@ app
             clocks: CLOCKS
         });
     })
+    .get('/man', (req, res) => {
+        res.render(__dirname + '/public/views/man.hbs', {
+            clocks: CLOCKS
+        });
+    })
+    .get('/woman', (req, res) => {
+        res.render(__dirname + '/public/views/woman.hbs', {
+            clocks: CLOCKS
+        });
+    })
     //TODO remove from here in future :)
     .get('/clock-view/:id', (req, res) => {
         const {id} = req.params;

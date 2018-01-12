@@ -1,0 +1,43 @@
+@import "variables";
+@import "config";
+@import "header";
+@import "footer";
+
+#clock-wrapper {
+  width: 80vw;
+  margin: 50px 10vw;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  .clock {
+    width: 20%;
+    margin: 20px 2%;
+
+    img.clock-icon {
+      width: 100%;
+    }
+
+    .clock-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      p{
+        font-size: 20px;
+        //font-weight: bold;
+      }
+
+      a.btn {
+        margin-top: 5px;
+        width: 50%;
+        background-color: @color-gray;
+      }
+    }
+  }
+}
+
+#cart{
+  display: none !important;
+}
