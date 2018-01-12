@@ -94,7 +94,7 @@ $(function () {
     $('#buy-form-close').click(function () {
         $('#buy-form').modal('close')
     })
-})
+});
 
 const updateCartCount = function () {
     if (CART.length > 0) {
@@ -126,10 +126,10 @@ const onBuyBtn = function (e) {
     // CART.push(id);
     // setCookie('CART', JSON.stringify(CART))
 
-    $(document).trigger('cart', id)
+    $(document).trigger('cart', id);
 
     $('#cart-content').removeClass('active')
-}
+};
 
 const getClockFromServer = function (id) {
     return new Promise(function (res, rej) {
@@ -183,18 +183,23 @@ const renderClockForCart = function (clock, bb) {
     const colorDom = $('<div class="color-wrapper">Color: <span class="color-dom"></span></div>')
     $(colorDom.find('span')[0]).css({background: clock.color})
 
-    const dom = $(`<div class="clock-cart-model">
-        <img src="${clockModel.images[0]}" alt="" />
-        <div class="clock-info">
-        <span>${clockModel.name} | ${clockModel.price}$</span>
-        
-        </div>
-        </div>`)
+    const deleteDom = $(`<button class="clock-delete" data-clock-id="${clock.id}"><i class="material-icons">close</i></button>`)
 
-    $(dom.find('.clock-info')[0]).append(colorDom)
+    const dom = $(
+        `<div class="clock-cart-model">
+            <img src="${clockModel.images[0]}" alt="" />
+            <div class="clock-info">
+                <span>${clockModel.name} | ${clockModel.price}$</span>
+            </div>
+        </div>`);
+
+    $(dom.find('.clock-info')[0]).append(colorDom);
+    deleteDom.click(deleteClockFromCart);
+
+    dom.append(deleteDom);
 
     return dom
-}
+};
 
 const renderClock = function (clock, bb) {
     const dom = $(`<div class="clock-cart-model">
@@ -207,10 +212,22 @@ const renderClock = function (clock, bb) {
     return dom;
 };
 
-
 const renderBuyBtn = function (index) {
     const dom = $(`<button class="clock-buy btn-floating waves-effect waves-gray right" data-clock-id="${index}"><i class="material-icons small">add_shopping_cart</i></button>`)
     dom.click(onBuyBtn)
 
     return dom
-}
+};
+
+const deleteClockFromCart = function (e) {
+    const self = $(this).parent()[0];
+    const wrapper = $(self).parent()[0];
+
+    const selfPos = Array.from($(wrapper).children()).indexOf(self);
+
+    CART.splice(selfPos, 1);
+    setCookie('CART', JSON.stringify(CART));
+
+    updateCartCount();
+    $('#cart-content').removeClass('active');
+};

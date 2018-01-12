@@ -84,7 +84,7 @@ const onBuyBtn = function (e) {
         id,
         color: CLOCK_COLOR
     });
-    setCookie('CART', JSON.stringify(CART))
+    setCookie('CART', JSON.stringify(CART));
 
     $(document).trigger('cart', id);
 
@@ -123,23 +123,29 @@ const openCart = function () {
 
     }
 }
+
 const renderClockForCart = function (clock, bb) {
     const clockModel = clock.clockInfo
     const colorDom = $('<div class="color-wrapper">Color: <span class="color-dom"></span></div>')
     $(colorDom.find('span')[0]).css({background: clock.color})
 
-    const dom = $(`<div class="clock-cart-model">
-        <img src="${clockModel.images[0]}" alt="" />
-        <div class="clock-info">
-        <span>${clockModel.name} | ${clockModel.price}$</span>
-        
-        </div>
-        </div>`)
+    const deleteDom = $(`<button class="clock-delete" data-clock-id="${clock.id}"><i class="material-icons">close</i></button>`)
 
-    $(dom.find('.clock-info')[0]).append(colorDom)
+    const dom = $(
+        `<div class="clock-cart-model">
+            <img src="${clockModel.images[0]}" alt="" />
+            <div class="clock-info">
+                <span>${clockModel.name} | ${clockModel.price}$</span>
+            </div>
+        </div>`);
+
+    $(dom.find('.clock-info')[0]).append(colorDom);
+    deleteDom.click(deleteClockFromCart);
+
+    dom.append(deleteDom);
 
     return dom
-}
+};
 
 const buyCart = function () {
     // $.get('http://localhost:8888/buy-cart', {clocks: CART.join(',')}, function (answer) {
@@ -153,3 +159,16 @@ const buyCart = function () {
 
     $('#buy-form').modal('open');
 }
+
+const deleteClockFromCart = function (e) {
+    const self = $(this).parent()[0];
+    const wrapper = $(self).parent()[0];
+
+    const selfPos = Array.from($(wrapper).children()).indexOf(self);
+
+    CART.splice(selfPos, 1);
+    setCookie('CART', JSON.stringify(CART));
+
+    updateCartCount();
+    $('#cart-content').removeClass('active');
+};
