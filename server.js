@@ -20,10 +20,10 @@ hbs.registerHelper('if_even', function (conditional, options) {
 
 const app = express();
 
-// mongoS.connect("mongodb://localhost:27017/clocls");
-// mongoS.connection.on('error', (err) => {
-//     console.log(err);
-// });
+mongoS.connect("mongodb://localhost:27017/clocls");
+mongoS.connection.on('error', (err) => {
+    console.log(err);
+});
 
 const partialsDir = __dirname + '/public/views/partials';
 

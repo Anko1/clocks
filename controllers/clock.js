@@ -41,5 +41,34 @@ module.exports = {
         });
 
         res.json("ok");
+    },
+
+    topClocks(req, res, next) {
+        Clocks.find({}).limit(5).exec((err, data) => {
+            if(err)
+                return next(new AppError(500));
+
+            res.json(data);
+        })
+    },
+
+    man(req, res, next) {
+        Clocks.find({for: 'man'}, (err, data) => {
+            console.log(err, data);
+            if(err)
+                return next(new AppError(500))
+
+            if(data)
+                res.json(data);
+        })
+    },
+
+    wom(req, res, next) {
+        Clocks.find({for: 'wom'}).exec((err, data) => {
+            if(err)
+                return next(new AppError(500))
+
+            res.json(data);
+        })
     }
 };

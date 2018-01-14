@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const Clock = new Schema({
     name     : String,
     price    : Number,
+    for      : String,
     description: String,
     details  : Object,
     images   : Array,
