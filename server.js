@@ -51,15 +51,16 @@ app
         res.render(__dirname + '/public/views/index.hbs', {
             clocks: CLOCKS
         });
+
     })
     .get('/man', (req, res) => {
         res.render(__dirname + '/public/views/man.hbs', {
-            clocks: CLOCKS
+            clocks: CLOCKS.filter(clock => clock.for === 'man')
         });
     })
     .get('/woman', (req, res) => {
         res.render(__dirname + '/public/views/woman.hbs', {
-            clocks: CLOCKS
+            clocks: CLOCKS.filter(clock => clock.for === 'wom')
         });
     })
     //TODO remove from here in future :)
@@ -72,12 +73,6 @@ app
     })
     .post('/get-cart', (req, res) => {
         const ids = JSON.parse(req.body.clocks)
-
-        // const answer = CLOCKS.filter((clock, i) => {
-        //     const clockId = clock.id;
-        //
-        //     return CLOCKS[clockId]
-        // });
 
         const answer = ids.map(clock => {
             clock.clockInfo = CLOCKS[clock.id]
