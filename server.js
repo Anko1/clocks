@@ -74,10 +74,12 @@ app
     .post('/get-cart', (req, res) => {
         const ids = JSON.parse(req.body.clocks)
 
-        const answer = ids.map(clock => {
-            clock.clockInfo = CLOCKS[clock.id]
-
-            return clock
+        const answer = ids.map(clockId => {
+            return {
+                id: clockId,
+                color: null,
+                clockInfo: CLOCKS[clockId]
+            }
         });
 
         // console.log(answer);

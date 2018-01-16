@@ -123,8 +123,8 @@ const onPhoto = function () {
 
 const onBuyBtn = function (e) {
     const id = $(this).attr('data-clock-id')
-    // CART.push(id);
-    // setCookie('CART', JSON.stringify(CART))
+    CART.push(id);
+    setCookie('CART', JSON.stringify(CART))
 
     $(document).trigger('cart', id);
 
