@@ -63,6 +63,10 @@ app
             clocks: CLOCKS.filter(clock => clock.for === 'wom')
         });
     })
+    .get('/contents', (req, res) => {
+        res.render(__dirname + '/public/views/contact.hbs' );
+
+    })
     //TODO remove from here in future :)
     .get('/clock-view/:id', (req, res) => {
         const {id} = req.params;
