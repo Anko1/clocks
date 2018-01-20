@@ -240,7 +240,18 @@ footer.page-footer {
 footer.page-footer h5 {
   color: #7b7b7b;
   padding-bottom: 10px;
-  border-bottom: 1px solid #7b7b7b;
+  position: relative;
+}
+footer.page-footer h5::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 30vw;
+  background-color: #7b7b7b;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
 }
 footer.page-footer .ss-wrapper {
   display: flex;
@@ -293,6 +304,9 @@ footer.page-footer .links ul li a {
   color: #7b7b7b;
   font-size: 16px;
 }
+footer.page-footer .pp-wrapper {
+  text-align: center;
+}
 footer.page-footer .pp-wrapper .payment {
   height: 35px;
   margin-right: 10px;
@@ -304,7 +318,13 @@ footer.page-footer .address {
   flex-direction: column;
 }
 footer.page-footer .address span {
+  text-align: center;
   width: 100%;
+}
+footer.page-footer .logos {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 footer.page-footer .footer-copyright {
   background-color: white;

@@ -7,7 +7,21 @@ footer.page-footer {
   h5 {
     color: @color-gray;
     padding-bottom: 10px;
-    border-bottom: 1px solid @color-gray;
+    position: relative;
+    //border-bottom: 1px solid @color-gray;
+
+    &::after{
+      content: '';
+      display: block;
+      height: 1px;
+      width: 30vw;
+      background-color: @color-gray;
+
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
   }
 
   .ss-wrapper {
@@ -78,6 +92,7 @@ footer.page-footer {
   }
 
   .pp-wrapper {
+    text-align: center;
     .payment {
       height: 35px;
       margin-right: 10px;
@@ -92,8 +107,15 @@ footer.page-footer {
     flex-direction: column;
 
     span {
+      text-align: center;
       width: 100%;
     }
+  }
+
+  .logos{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
   }
 
   .footer-copyright {
@@ -103,17 +125,17 @@ footer.page-footer {
   }
 
   @media @tablet {
-    .ss-wrapper{
+    .ss-wrapper {
       flex-direction: column;
 
-      .subscribe, .socials{
+      .subscribe, .socials {
         width: 100%;
       }
 
-      .subscribe{
+      .subscribe {
         margin-bottom: 20px;
 
-        input, button{
+        input, button {
           width: 100%;
         }
       }
