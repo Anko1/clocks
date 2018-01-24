@@ -8,7 +8,7 @@ $(function () {
         console.log(e.message)
     }
 
-    if (CART.length > 0) updateCartCount(true)
+    if (CART.length > 0) updateCartCount()
 
     $('.multiple-items').slick({
         infinite: true,
@@ -84,7 +84,7 @@ $(function () {
     $(document).on('cart', function (e, clockId) {
         // console.log(clockId);
 
-        updateCartCount()
+        updateCartCount(true)
     })
 
     $('#cart').click(openCart.bind(this, false))
@@ -104,7 +104,7 @@ const updateCartCount = function (test) {
         cartText.addClass('empty')
     }
 
-    !test && openCart(true)
+    if(test) openCart(true)
 }
 
 const onPhoto = function () {
@@ -224,6 +224,6 @@ const deleteClockFromCart = function (e) {
     CART.splice(selfPos, 1);
     setCookie('CART', JSON.stringify(CART));
 
-    updateCartCount();
+    updateCartCount(true);
     // $('#cart-content').removeClass('active');
 };

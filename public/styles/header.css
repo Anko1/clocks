@@ -167,6 +167,11 @@ section#header nav .nav-wrapper #cart span::before {
   transition: .3s;
   position: relative;
 }
+@media screen and (max-width: 768px) {
+  #links a {
+    font-size: 16px;
+  }
+}
 #links a::after {
   content: '';
   height: 30px;
@@ -185,13 +190,12 @@ section#header nav .nav-wrapper #cart span::before {
 }
 #buy-form {
   width: 45vw;
-  height: 50vh;
+  height: 75vh;
   overflow-y: hidden;
 }
 @media screen and (max-width: 768px) {
   #buy-form {
     width: 80%;
-    height: 75vh;
   }
   #buy-form .modal-content {
     height: 100%;

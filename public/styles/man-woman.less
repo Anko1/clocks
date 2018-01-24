@@ -31,13 +31,33 @@
 
       a.btn {
         margin-top: 5px;
-        width: 50%;
+        width: 100%;
         background-color: @color-gray;
       }
     }
   }
 }
+#cart-content {
+  z-index: 2;
+}
+@media screen and (max-width: 768px) {
+  #clock-wrapper .clock {
+    width: 28%;
+  }
 
-#cart{
-  display: none !important;
+
+  .btn, .btn-large, .btn-flat {
+    padding: 0 20%;
+  }
+}
+#buy-form {
+  width: 45vw;
+  height: 66vh;
+  overflow-y: hidden;
+}
+@media screen and (max-width: 768px) {
+  #buy-form {
+    width: 80%;
+    height: 75vh;
+  }
 }

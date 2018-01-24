@@ -54,12 +54,12 @@ app
 
     })
     .get('/man', (req, res) => {
-        res.render(__dirname + '/public/views/man.hbs', {
+        res.render(__dirname + '/public/views/man-woman.hbs', {
             clocks: CLOCKS.filter(clock => clock.for === 'man')
         });
     })
     .get('/woman', (req, res) => {
-        res.render(__dirname + '/public/views/woman.hbs', {
+        res.render(__dirname + '/public/views/man-woman.hbs', {
             clocks: CLOCKS.filter(clock => clock.for === 'wom')
         });
     })
