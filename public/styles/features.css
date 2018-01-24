@@ -1,0 +1,16 @@
+section#features {
+  margin-top: 10vh;
+  background-color: whitesmoke;
+}
+section#features .feature {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+section#features .feature img {
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+section#features .feature span {
+  font-weight: bold;
+}
